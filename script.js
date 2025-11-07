@@ -6,12 +6,8 @@ const likedCats = document.getElementById("liked-cats");
 let cats = [];
 let liked = [];
 
-async function fetchCats(count = 10) {
-  const promises = Array.from({ length: count }, () =>
-    fetch("https://cataas.com/cat?json=true").then(res => res.json())
-  );
-  const data = await Promise.all(promises);
-  cats = data.map(cat => `https://cataas.com${cat.id}`);
+function fetchCats(count = 10) {
+  cats = Array.from({ length: count }, (_, i) => `https://cataas.com/cat?${Date.now() + i}`);
   renderCards();
 }
 
@@ -28,18 +24,25 @@ function renderCards() {
 
 function addSwipeListeners(card) {
   let startX = 0;
+  let currentX = 0;
 
   card.addEventListener("touchstart", e => {
     startX = e.touches[0].clientX;
   });
 
-  card.addEventListener("touchend", e => {
-    const endX = e.changedTouches[0].clientX;
-    const diff = endX - startX;
+  card.addEventListener("touchmove", e => {
+    currentX = e.touches[0].clientX;
+    const diff = currentX - startX;
+    card.style.transform = `translateX(${diff}px)`;
+  });
 
-    if (Math.abs(diff) > 50) {
+  card.addEventListener("touchend", () => {
+    const diff = currentX - startX;
+    if (Math.abs(diff) > 80) {
       const likedIt = diff > 0;
       handleSwipe(card, likedIt);
+    } else {
+      card.style.transform = "translateX(0)";
     }
   });
 }
