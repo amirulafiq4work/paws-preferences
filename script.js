@@ -7,7 +7,7 @@ let cats = [];
 let liked = [];
 
 function fetchCats(count = 10) {
-  cats = Array.from({ length: count }, (_, i) => `https://cataas.com/cat?${Date.now() + i}`);
+  cats = Array.from({ length: count }, (_, i) => `https://cataas.com/cat`);
   renderCards();
 }
 
