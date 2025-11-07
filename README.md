@@ -4,11 +4,11 @@ Discover your favorite feline friends with a swipe! This mobile-friendly web app
 
 ## 🚀 Live Demo
 
-👉 [View the app on GitHub Pages](https://yourusername.github.io/paws-preferences)
+👉 [View the app on GitHub Pages](https://amirulafiq4work.github.io/paws-preferences)
 
 ## 📦 Repository
 
-🔗 [GitHub Source Code](https://github.com/yourusername/paws-preferences)
+🔗 [GitHub Source Code](https://github.com/amirulafiq4work/paws-preferences)
 
 ---
 
@@ -33,7 +33,11 @@ Discover your favorite feline friends with a swipe! This mobile-friendly web app
 ## 📱 Features
 
 - Swipe-based interaction (left = dislike, right = like)
+- Button optional for interaction (like and dislike)
+- Fun fact related to cats while waiting for loading cats...
+- Show current image position and how much in total
 - Smooth animations and transitions
+- Wait for 3 seconds after each swipe/click button to prevent spam
 - Summary screen with liked cats
 - Mobile-first responsive design
 - Restart option to try again
@@ -66,9 +70,8 @@ Cataas API: https://cataas.com/cat?json=true
 Images are fetched dynamically and displayed as swipeable cards.
 
 ## ✨ Future Enhancements
-Add captions using /cat/says/{text}
 
-Save preferences in localStorage
+Save user's name and their preferences in localStorage
 
 Share liked cats on social media
 
