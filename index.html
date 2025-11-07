@@ -2,20 +2,45 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Paws & Preferences</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paws & Preferences 🐾</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="app">
-    <h1>Paws & Preferences 🐾</h1>
-    <div id="card-container"></div>
-    <div id="summary" class="hidden">
-      <h2>You liked <span id="like-count"></span> cats!</h2>
-      <div id="liked-cats"></div>
-      <button onclick="restart()">Try Again</button>
+    <h1 class="title">🐾 Paws & Preferences</h1>
+
+    <!-- Cat fact -->
+    <div id="cat-fact" class="cat-fact"></div>
+
+    <!-- Loading Spinner -->
+    <div id="loader" class="loader">
+      <div class="spinner"></div>
+      <p>Loading cats...</p>
+    </div>
+
+    <!-- Cat Card Stack -->
+    <div id="card-stack" class="card-stack"></div>
+
+    <!-- Like / Dislike Buttons -->
+    <div class="buttons">
+      <button id="dislike-btn" class="dislike" disabled>👎 Dislike</button>
+      <button id="like-btn" class="like" disabled>❤️ Like</button>
+    </div>
+
+    <!-- Cooldown Message -->
+    <div id="cooldown" class="cooldown hidden">
+      <p>Next kitty in <span id="cooldown-count">3</span>...</p>
+    </div>
+
+    <!-- Summary Section -->
+    <div id="summary" class="summary hidden">
+      <h2>You liked <span id="like-count"></span> cats! 😻</h2>
+      <div id="liked-cats" class="liked-grid"></div>
+      <button id="restart" style="color: black; border: 2px solid; margin-top: 5px;">Try Again</button>
     </div>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
