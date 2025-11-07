@@ -11,7 +11,7 @@ async function fetchCats(count = 10) {
     fetch("https://cataas.com/cat?json=true").then(res => res.json())
   );
   const data = await Promise.all(promises);
-  cats = data.map(cat => `https://cataas.com${cat.url}`);
+  cats = data.map(cat => `https://cataas.com${cat.id}`);
   renderCards();
 }
 
